@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Resuelto</title>
+</head>
+<body>
+    <div style='font-family: Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);'>
+        <div style='text-align: center; margin-bottom: 20px;'>
+            <h2 style='color: #2c3e50; margin-bottom: 5px;'>Ticket Resuelto</h2>
+            <div style='width: 50px; height: 3px; background-color: #10B981; margin: 0 auto;'></div>
+        </div>
+        <div style='background-color: #DCFCE7; padding: 15px; border-left: 4px solid #10B981; margin-bottom: 20px;'>
+            <p style='margin: 0; color: #333; font-size: 16px;'>Ticket #<strong th:text="${ticket.numeroTicket}">12345</strong> ha sido marcado como resuelto</p>
+        </div>
+        <p style='color: #555; font-size: 15px; line-height: 1.5;'>Estimado/a <strong th:text="${ticket.usuarioCreador.nombre}">Usuario</strong>,</p>
+        <p style='color: #555; font-size: 15px; line-height: 1.5;'>Su ticket ha sido resuelto por el técnico asignado. Si tiene alguna duda adicional, puede responder a este correo o abrir un nuevo ticket.</p>
+        <div style='background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 5px; overflow: hidden; margin: 25px 0;'>
+            <div style='background-color: #f1f8ff; padding: 10px 15px; border-bottom: 1px solid #e0e0e0;'>
+                <h3 style='margin: 0; color: #2c3e50; font-size: 16px;'>Detalles del Ticket</h3>
+            </div>
+            <div style='padding: 15px;'>
+                <table style='width: 100%; border-collapse: collapse;'>
+                    <tr>
+                        <td style='padding: 8px 12px; font-weight: bold; color: #555; width: 30%;'>Título:</td>
+                        <td style='padding: 8px 12px; color: #333;' th:text="${ticket.titulo}">Título del ticket</td>
+                    </tr>
+                    <tr style='background-color: #f9f9f9;'>
+                        <td style='padding: 8px 12px; font-weight: bold; color: #555;'>Estado:</td>
+                        <td style='padding: 8px 12px; color: #333;'><span style='background-color: #10B981; color: white; padding: 3px 8px; border-radius: 16px; font-size: 14px; text-transform: uppercase; font-weight: 600;'>RESUELTO</span></td>
+                    </tr>
+                    <tr th:if="${ticket.comentarioResolucion != null}">
+                        <td style='padding: 8px 12px; font-weight: bold; color: #555;'>Resolución:</td>
+                        <td style='padding: 8px 12px; color: #333;' th:text="${ticket.comentarioResolucion}">Comentario de resolución</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <p style='color: #555; font-size: 15px; line-height: 1.5;'>El ticket será cerrado automáticamente después de un período de tiempo si no hay más actividad.</p>
+        <div style='text-align: center; margin: 30px 0;'>
+            <a th:href="${urlBase + '/tickets/' + ticket.id}" style='display: inline-block; background-color: #10B981; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold;'>Ver Ticket</a>
+        </div>
+        <div style='margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;'>
+            <p style='color: #777; font-size: 14px; margin: 0;'>Saludos cordiales,<br><strong>Sistema de Tickets</strong></p>
+        </div>
+    </div>
+</body>
+</html>

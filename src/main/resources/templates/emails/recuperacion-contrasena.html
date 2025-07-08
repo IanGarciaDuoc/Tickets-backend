@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperación de Contraseña</title>
+</head>
+<body>
+    <div style='font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto;'>
+        <h2 style='color: #333;'>Recuperación de Contraseña</h2>
+        <p>Hemos recibido una solicitud para restablecer tu contraseña.</p>
+        <p>Haz clic en el siguiente botón para crear una nueva contraseña:</p>
+        <a th:href="${resetUrl}" style='display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 20px 0;'>Restablecer Contraseña</a>
+        <p>Si no solicitaste un cambio de contraseña, puedes ignorar este correo.</p>
+        <p>El enlace expirará en 24 horas.</p>
+        <p>Saludos,<br>El Equipo de Soporte</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de configuración</title>
+</head>
+<body>
+    <div style='font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0;'>
+        <h1 style='color: #333;' th:text="${titulo}">Prueba de configuración</h1>
+        <p th:text="${mensaje}">Este es un correo de prueba para verificar la configuración del sistema.</p>
+        <p>Si estás recibiendo este correo, la configuración de correo es correcta.</p>
+        <div style='margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;'>
+            <p style='color: #777; font-size: 14px; margin: 0;'>Saludos cordiales,<br><strong>Sistema de Tickets</strong></p>
+        </div>
+    </div>
+</body>
+</html>
