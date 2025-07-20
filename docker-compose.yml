@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  load-test:
+    image: locustio/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./load-testing:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --host=http://host.docker.internal:8080
+    environment:
+      - LOCUST_USERS=50
+      - LOCUST_SPAWN_RATE=5
